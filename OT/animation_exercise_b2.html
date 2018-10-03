@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>jQuery animation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <style>
+            li {
+                    background-color: red;
+                    color: white;
+                    list-style-type: none;
+                    text-align: center;
+                    font-size: 30px;
+            }
+            h1 {
+                text-align: center;
+            }
+    </style>
+</head>
+<body>
+    <div id="animate">
+        <h1>TODO list</h1>
+    </div>
+    <ul>
+            <li>Walk the dog</li>
+            <li>Dig the body</li>
+            <li>Steal the cash</li>
+            <li>Escape the cops</li>
+            <li>Save the girl</li>
+    </ul>
+    <script>
+    $(document).ready(function() {
+        $('li').on('click', function() {
+                $(this).animate({
+                        opacity: 0.0,
+                        paddingLeft: '+=80'
+                    }, 500, function() {
+                        $(this).remove();
+                    });
+                });
+        });
+    </script>
+</body>
+</html>
